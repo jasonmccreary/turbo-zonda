@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Watch extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -36,7 +35,7 @@ class Watch extends Model
      */
     protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     public function user()
