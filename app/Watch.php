@@ -43,11 +43,11 @@ class Watch extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\\User');
     }
 
     public function video()
     {
-        return $this->belongsTo('App\Video');
+        return $this->belongsTo('App\\Video');
     }
 }
