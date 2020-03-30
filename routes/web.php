@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::get('video', [ 'name' => 'video.index']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('video/{video}', [ 'name' => 'video.show']);
+    Route::resource('comment', 'CommentController')->only('create', 'show');
 });
 
-Route::get('video', ['uses' => 'VideoController@index', 'name' => 'video.index']);
-
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('video/{video}', ['uses' => 'VideoController@show', 'name' => 'video.show']);
-    Route::resource('comment', 'CommentController', ['only' => ['create', 'show']]);
-});
-
-Route::post('watch', ['uses' => 'WatchController@post']);
+Route::post('watch', 'WatchController@post');
