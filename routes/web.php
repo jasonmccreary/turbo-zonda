@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('video', [ 'name' => 'video.index']);
+Route::get('video', ['name' => 'video.index']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('video/{video}', [ 'name' => 'video.show']);
+    Route::get('video/{video}', ['name' => 'video.show']);
     Route::resource('comment', 'CommentController')->only('create', 'show');
 });
 

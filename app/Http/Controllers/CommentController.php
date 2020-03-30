@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCommentRequest;
 use App\Comment;
 use App\Events\NewComment;
 use App\Http\Requests\CommentStoreRequest;
+use App\Http\Requests\StoreCommentRequest;
 use App\Mail\CommentCreated;
 use Illuminate\Http\Request;
 
@@ -26,7 +26,6 @@ class CommentController extends Controller
      */
     public function store(StoreCommentRequest $request)
     {
-
         $comment = Comment::create($request->all());
 
         event(new NewComment($comment));
