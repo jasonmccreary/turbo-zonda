@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('video', ['uses' => 'VideoController@index', 'as' => 'video.index']);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('video/{video}', ['uses' => 'VideoController@show', 'as' => 'video.show']);
+    Route::resource('comment', 'CommentController', ['only' => ['create', 'show']]);
+});
+
+Route::resource('watch', 'WatchController')->only('store');
