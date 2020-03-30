@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCommentRequest;
 use App\Comment;
 use App\Events\NewComment;
 use App\Http\Requests\CommentStoreRequest;
@@ -23,9 +24,8 @@ class CommentController extends Controller
      * @param \App\Http\Requests\CommentStoreRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCommentRequest $request)
     {
-        $request->validate(['content' => 'required|string']);
 
         $comment = Comment::create($request->all());
 
