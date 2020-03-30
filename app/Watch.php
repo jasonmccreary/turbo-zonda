@@ -35,9 +35,8 @@ class Watch extends Model
      * @var array
      */
     protected $dates = [
-        'completed_at',
         'created_at',
-        'updated_at',
+        'updated_at'
     ];
 
     public function user()
