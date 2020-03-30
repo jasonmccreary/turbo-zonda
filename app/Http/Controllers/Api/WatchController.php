@@ -16,6 +16,6 @@ class WatchController extends Controller
     {
         $watch = Watch::create(\Request::all());
 
-        return \Response::make(null, 204);
+        return response(null, 204);
     }
 }
