@@ -15,7 +15,7 @@ class WatchController extends Controller
      */
     public function store(WatchStoreRequest $request)
     {
-        $watch = Watch::create(\Request::all());
+        $watch = Watch::create($request->all());
 
         return response(null, 204);
     }
