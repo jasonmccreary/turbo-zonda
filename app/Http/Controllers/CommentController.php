@@ -32,7 +32,7 @@ class CommentController extends Controller
 
         event(new NewComment($comment));
 
-        Mail::to(env('REVIEWER_EMAIL'))->send(new CommentCreated($comment));
+        Mail::to(config('settings.reviewer_email'))->send(new CommentCreated($comment));
 
         $request->session()->flash('message', $message);
 
