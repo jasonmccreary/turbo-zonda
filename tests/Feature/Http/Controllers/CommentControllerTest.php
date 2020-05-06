@@ -17,7 +17,9 @@ use Tests\TestCase;
  */
 class CommentControllerTest extends TestCase
 {
-    use HttpTestAssertions, RefreshDatabase, WithFaker;
+    use HttpTestAssertions;
+    use RefreshDatabase;
+    use WithFaker;
 
     /**
      * @test
