@@ -36,6 +36,6 @@ class CommentController extends Controller
 
         $request->session()->flash('message', $message);
 
-        return redirect(route('comment.create'));
+        return redirect()->route('comment.create');
     }
 }

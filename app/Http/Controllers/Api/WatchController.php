@@ -17,6 +17,6 @@ class WatchController extends Controller
     {
         $watch = Watch::create(\Request::all());
 
-        return response(null, 204);
+        return response()->noContent(204);
     }
 }
