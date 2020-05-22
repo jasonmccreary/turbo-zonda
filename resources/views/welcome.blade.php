@@ -97,4 +97,11 @@
             </div>
         </div>
     </body>
+@if(env('APP_DEBUG'))
+  {{ display_queries() }}
+@end
+
+@env('production')
+  {{ tracking_code() }}
+@endenv
 </html>
