@@ -16,7 +16,7 @@ class VideoController extends Controller
     {
         $videos = Video::all();
 
-        return View::make('video.index', compact('videos'));
+        return view('video.index', compact('videos'));
     }
 
     /**
@@ -26,6 +26,6 @@ class VideoController extends Controller
      */
     public function show(Request $request, Video $video)
     {
-        return View::make('video.show', compact('video'));
+        return view('video.show', compact('video'));
     }
 }
