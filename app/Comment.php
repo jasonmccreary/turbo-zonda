@@ -28,7 +28,6 @@ class Comment extends Model
         'approved' => 'boolean',
     ];
 
-
     public function user()
     {
         return $this->belongsTo(\App\User::class);
