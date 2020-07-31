@@ -2,7 +2,7 @@
 
 @section('content')
     <form method="POST" action="{{ route('comment.store') }}">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        @csrf
 
         <textarea name="content" rows="6"></textarea>
 
@@ -11,7 +11,7 @@
     </form>
 
 
-    @if (Auth::check())
+    @auth
         <button type="submit">Upvote</button>
-    @endif
+    @endauth
 @endsection
