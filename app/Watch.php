@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Watch extends Model
 {
-    protected $table = 'watches';
 
     /**
      * The attributes that are mass assignable.
