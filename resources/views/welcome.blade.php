@@ -97,7 +97,7 @@
             </div>
         </div>
     </body>
-@if(env('APP_DEBUG'))
+@if(config('app.debug'))
   {{ display_queries() }}
 @end
 
