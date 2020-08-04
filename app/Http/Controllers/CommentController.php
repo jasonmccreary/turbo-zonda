@@ -7,7 +7,7 @@ use App\Events\NewComment;
 use App\Http\Requests\CommentStoreRequest;
 use App\Mail\CommentCreated;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
