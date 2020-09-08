@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Company;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class CompanyFactory extends Factory
@@ -24,7 +24,7 @@ class CompanyFactory extends Factory
     {
         $name = $this->faker->company;
 
-    return [
+        return [
         'name' => $name,
         'slug' => Str::slug($name),
     ];
