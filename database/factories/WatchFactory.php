@@ -1,12 +1,10 @@
 <?php
 
-
-
 namespace Database\Factories;
 
 use App\Video;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Watch;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WatchFactory extends Factory
 {
