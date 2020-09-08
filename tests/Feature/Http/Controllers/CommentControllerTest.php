@@ -30,7 +30,6 @@ class CommentControllerTest extends TestCase
         $response->assertViewIs('comment.create');
     }
 
-
     /**
      * @test
      */
