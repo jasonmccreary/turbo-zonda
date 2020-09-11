@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Watch;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\WatchStoreRequest;
+use App\Watch;
 use Response;
 
 class WatchController extends Controller
