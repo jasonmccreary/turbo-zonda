@@ -1,12 +1,10 @@
 <?php
 
-
-
 namespace Database\Factories;
 
+use App\Comment;
 use App\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Comment;
 
 class CommentFactory extends Factory
 {
