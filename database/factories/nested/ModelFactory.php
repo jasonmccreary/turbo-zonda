@@ -1,11 +1,10 @@
 <?php
 
-
-
 namespace Database\Factories\Nested;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ModelFactory extends Factory
 {
@@ -24,7 +23,7 @@ class ModelFactory extends Factory
     public function definition()
     {
         return [
-            'last_name' => \Str::after('McCreary, Jason', ', '),
+            'last_name' => Str::after('McCreary, Jason', ', '),
             'created_at' => now(),
         ];
     }
