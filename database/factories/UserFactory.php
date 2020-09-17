@@ -5,8 +5,6 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-
-
 $factory->afterCreatingState(App\User::class, 'unverified', function ($faker) {
     return [
         'verified' => 0,

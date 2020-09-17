@@ -1,11 +1,9 @@
 <?php
 
-
-
 namespace Database\Factories\Nested;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ModelFactory extends Factory
 {
