@@ -22,3 +22,9 @@ $factory->state(App\User::class, 'unverified', function ($faker) {
         'verified' => 0,
     ];
 });
+
+$factory->afterCreatingState(App\User::class, 'unverified', function ($faker) {
+    return [
+        'verified' => 0,
+    ];
+});
