@@ -1,18 +1,42 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+
+namespace Database\Factories\Nested;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use App\User;
-use Faker\Generator as Faker;
 
-$factory->define(User::class, function (Faker $faker) {
-    return [
-        'created_at' => now(),
-    ];
-});
+class ModelFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
 
-$factory->define(App\Watch::class, function (Faker $faker) {
-    return [
-        'created_at' => now(),
-    ];
-});
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'created_at' => now(),
+        ];
+    }
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'created_at' => now(),
+        ];
+    }
+}
