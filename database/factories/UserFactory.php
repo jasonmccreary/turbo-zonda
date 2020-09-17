@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Str;
-
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     $email = $faker->safeEmail;
 
@@ -18,6 +16,12 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->state(App\User::class, 'unverified', function ($faker) {
+    return [
+        'verified' => 0,
+    ];
+});
+
+$factory->afterCreatingState(App\User::class, 'unverified', function ($faker) {
     return [
         'verified' => 0,
     ];
