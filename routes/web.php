@@ -24,25 +24,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('comment', 'CommentController', ['only' => ['create', 'show']]);
 });
 
-
 Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
 
-
 Route::group(['middleware' => ['auth']], function () {
-  Route::get('billing', [
+    Route::get('billing', [
       'as' => 'billing.create',
       'uses' => 'BillingController@create',
   ]);
-  Route::post('billing', [
+    Route::post('billing', [
       'as' => 'billing.store',
       'uses' => 'BillingController@store',
   ]);
 
-  Route::get('invoices', [
+    Route::get('invoices', [
       'as'   => 'invoices.index',
       'uses' => 'InvoiceController@index',
   ]);
-  Route::get('invoices/{invoiceId}', [
+    Route::get('invoices/{invoiceId}', [
       'as'   => 'invoices.show',
       'uses' => 'InvoiceController@show',
   ]);

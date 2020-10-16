@@ -21,7 +21,7 @@ class VideoControllerTest extends TestCase
         $videos = factory(Video::class, 3)
         ->states([
           'stateOne',
-          'stateTwo'
+          'stateTwo',
         ])
         ->create();
 
@@ -31,7 +31,6 @@ class VideoControllerTest extends TestCase
         $response->assertViewIs('video.index');
         $response->assertViewHas('videos');
     }
-
 
     /**
      * @test
