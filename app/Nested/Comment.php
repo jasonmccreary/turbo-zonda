@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Nested;
 
 use Illuminate\Database\Eloquent\Model;
 

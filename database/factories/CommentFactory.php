@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Comment;
+use App\Nested\Comment;
 use Faker\Generator as Faker;
 
 $factory->define(Comment::class, function (Faker $faker) {
