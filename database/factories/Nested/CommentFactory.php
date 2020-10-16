@@ -1,19 +1,20 @@
 <?php
 
-namespace Database\Factories;
+
+
+namespace Database\Factories\Nested;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Company;
-use Illuminate\Support\Str;
+use App\Nested\Comment;
 
-class CompanyFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Company::class;
+    protected $model = Comment::class;
 
     /**
      * Define the model's default state.
@@ -22,11 +23,10 @@ class CompanyFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->company;
-
         return [
-            'name' => $name,
-            'slug' => Str::slug($name),
+            'user_id' => \App\User::factory(),
+            'content' => $this->faker->paragraphs(3, true),
+            'approved' => $this->faker->boolean,
         ];
     }
 }
