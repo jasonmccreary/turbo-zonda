@@ -13,37 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::get('video', 'VideoController@index')->name('video.index');
+
+Route::middleware('auth')->group(function () {
+    Route::get('video/{video}', 'VideoController@show')->name('video.show');
+    Route::resource('comment', 'CommentController')->only('create', 'show');
 });
 
-Route::get('video', ['uses' => 'VideoController@index', 'as' => 'video.index']);
+Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('video/{video}', ['uses' => 'VideoController@show', 'as' => 'video.show']);
-    Route::resource('comment', 'CommentController', ['only' => ['create', 'show']]);
-});
+Route::middleware('auth')->group(function () {
+    Route::get('billing', 'BillingController@create')->name('billing.create');
+    Route::post('billing', 'BillingController@store')->name('billing.store');
 
-Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
-
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('billing', [
-      'as' => 'billing.create',
-      'uses' => 'BillingController@create',
-  ]);
-    Route::post('billing', [
-      'as' => 'billing.store',
-      'uses' => 'BillingController@store',
-  ]);
-
-    Route::get('invoices', [
-      'as'   => 'invoices.index',
-      'uses' => 'InvoiceController@index',
-  ]);
-    Route::get('invoices/{invoiceId}', [
-      'as'   => 'invoices.show',
-      'uses' => 'InvoiceController@show',
-  ]);
+    Route::get('invoices', 'InvoiceController@index')->name('invoices.index');
+    Route::get('invoices/{invoiceId}', 'InvoiceController@show')->name('invoices.show');
 });
 
 Route::resource('watch', 'WatchController')->only('store');
