@@ -18,7 +18,12 @@ class VideoControllerTest extends TestCase
      */
     public function index_displays_view()
     {
-        $videos = factory(Video::class, 3)->create();
+        $videos = factory(Video::class, 3)
+        ->states([
+          'stateOne',
+          'stateTwo'
+        ])
+        ->create();
 
         $response = $this->get(route('video.index'));
 
