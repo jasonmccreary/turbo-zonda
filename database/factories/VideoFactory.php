@@ -1,11 +1,9 @@
 <?php
 
-
-
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Video;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class VideoFactory extends Factory
 {
