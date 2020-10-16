@@ -38,4 +38,19 @@ class CommentController extends Controller
 
         return redirect(route('comment.create'));
     }
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function responses(Request $request)
+    {
+        // collpase
+        return response(null, 204);
+        return response(null, '204');
+
+        // preserve status
+        return response(null, 200);
+        return response(null, '200');
+    }
 }
