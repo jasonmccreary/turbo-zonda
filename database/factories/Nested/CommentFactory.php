@@ -1,11 +1,9 @@
 <?php
 
-
-
 namespace Database\Factories\Nested;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Nested\Comment;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory
 {
