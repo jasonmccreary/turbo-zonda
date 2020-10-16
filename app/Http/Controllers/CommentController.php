@@ -47,10 +47,12 @@ class CommentController extends Controller
     {
         // collpase
         return response(null, 204);
+
         return response(null, '204');
 
         // preserve status
         return response(null, 200);
+
         return response(null, '200');
     }
 }
