@@ -36,7 +36,7 @@ class CommentController extends Controller
 
         $request->session()->flash('message', $message);
 
-        return redirect(route('comment.create'));
+        return redirect()->route('comment.create');
     }
 
     /**
@@ -46,13 +46,13 @@ class CommentController extends Controller
     public function responses(Request $request)
     {
         // collpase
-        return response(null, 204);
+        return response()->noContent();
 
-        return response(null, '204');
+        return response()->noContent();
 
         // preserve status
-        return response(null, 200);
+        return response();
 
-        return response(null, '200');
+        return response();
     }
 }
