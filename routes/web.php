@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\WatchController;
-use App\Http\Controllers\CommentController;
 use App\Http\Controllers\BillingController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\VideoController;
